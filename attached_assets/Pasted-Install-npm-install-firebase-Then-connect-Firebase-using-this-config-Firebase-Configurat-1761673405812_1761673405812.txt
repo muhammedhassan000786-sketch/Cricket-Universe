@@ -1,0 +1,68 @@
+Install:
+npm install firebase
+
+Then connect Firebase using this config:
+
+// Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA9XBzORIeGZRcfEXTYXdS_MdVmgFHhAos",
+  authDomain: "universe-cricket-io.firebaseapp.com",
+  projectId: "universe-cricket-io",
+  storageBucket: "universe-cricket-io.firebasestorage.app",
+  messagingSenderId: "577564174466",
+  appId: "1:577564174466:web:05d21e4acbe4c5a53bac9b",
+  measurementId: "G-9FR5MR6ET3"
+};
+
+Enable Firebase Features:
+- Authentication (Email and Password login only)
+- Firestore Database (store user roles, player data, products, posts, etc.)
+- Storage (for product images, team logos, player pictures)
+
+### USER ROLES:
+There are TWO main account types:
+1) **Admin**
+2) **Team Player**
+
+### ADMIN ROLE:
+Admin login credentials (create these in Firestore):
+username: usmaniqbal
+password: cooperwindows1972
+
+Admin Capabilities:
+- Full control dashboard
+- Approve / Create / Remove Player Accounts
+- Add and Edit Player Profiles
+- Upload / Edit / Delete Products in Store
+- Manage News, Blog, Video, Match Highlights
+- Add Events, Fixtures, Results
+- Drag and Drop Website Sections Layout (simple visual editor)
+- Access Full Database
+
+### PLAYER ROLE:
+Players cannot register themselves.
+Admin will manually create their accounts from Admin Panel.
+Player Dashboard should show:
+- Player Profile
+- Match Stats
+- Performance History
+- Team / Squad Status
+- Training / Schedule Info
+
+### AUTH SYSTEM:
+- Show Stylish, Modern UI for Login / Signup (Tailwind UI style)
+- When login happens:
+  - If user.role == "admin" → redirect to Admin Dashboard
+  - If user.role == "player" → redirect to Player Dashboard
+  - Otherwise → redirect to Homepage
+
+### SHOP SYSTEM:
+- Display cricket products
+- Only **Cash On Delivery (COD)** checkout
+- At Checkout:
+  - User enters Name, Phone, Address
+  - Order gets stored in Firestore
+  - Status: "Pending"
+  - Admin can mark it "Confirmed" or "Delivered"
+
+(No Online Payments Required)

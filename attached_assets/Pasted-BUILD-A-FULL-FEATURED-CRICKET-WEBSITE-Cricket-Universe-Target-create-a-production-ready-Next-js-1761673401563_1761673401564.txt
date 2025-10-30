@@ -1,0 +1,108 @@
+BUILD A FULL-FEATURED CRICKET WEBSITE: "Cricket Universe"
+Target: create a production-ready Next.js website (React) with TailwindCSS + TypeScript, using a SQLite or PostgreSQL database (use SQLite for Replit demo), authentication, ecommerce (Stripe), media handling (Cloudinary or local for dev), and an admin dashboard. The site should implement the exact pages and features described below and be deployable from Replit. Provide README and environment setup steps.
+
+REQUIREMENTS & PAGES (All pages are direct subpages of Home):
+- Home
+- About Us
+- Our Team
+- Player Profiles
+- News & Updates
+- Match Highlights (Video Gallery)
+- Training & Coaching Guides
+- Tournaments & Events
+- Fixtures & Results
+- Shop (Store) with Cart & Checkout
+- Membership & Rewards
+- Community Forum
+- Blog
+- Contact Us
+- User Account (Login / Sign Up / Profile)
+
+CORE FEATURES:
+1. Routing & Pages
+   - Implement Next.js filesystem routing for all pages above.
+   - Each page must have a dynamic, SEO-friendly head (title, meta description, canonical, og:image).
+2. Layout & Styling
+   - Use TailwindCSS for styling.
+   - Responsive design (mobile-first).
+   - Header with logo, navigation, search, cart icon, and Login/Sign Up buttons.
+   - Footer with social links, contact, quick links, and subscribe form.
+3. Authentication & User Accounts
+   - Provide email/password auth with JWT or NextAuth.
+   - User profile page: avatar, saved favorites, orders, membership status.
+   - Signup, login, password reset flows.
+4. Team & Player Profiles
+   - Admin can create/edit players (name, age, role, bio, stats, photo, social links).
+   - Player Profiles page should be dynamic routes (/players/[slug]) with stats and gallery.
+5. News, Blog & Guides
+   - CMS-like system for posts (title, slug, excerpt, content, author, date, tags, featured image).
+   - List and single post pages with related posts and SEO meta.
+6. Video Gallery & Match Highlights
+   - Support YouTube/Vimeo embeds and uploaded video links.
+   - Video listing page with filtering by team/tournament.
+7. Tournaments, Fixtures & Results
+   - Admin can create tournaments, fixtures, results.
+   - Fixtures page with calendar-like listing; results page with scorecards.
+8. Shop & E-commerce
+   - Product model (title, sku, price, inventory, images, variants, description).
+   - Cart system (persist for logged-in users).
+   - Checkout integration with Stripe (test mode) and webhook for order confirmation.
+   - Orders dashboard in user profile and admin panel.
+9. Membership & Rewards
+   - Membership tiers (Free, Silver, Gold) with perks (exclusive content, discounts).
+   - Payment/subscription via Stripe for membership tiers.
+   - Rewards points system (simple DB-backed).
+10. Community Forum
+   - Basic forum implementation: categories, threads, comments.
+   - User can create threads, comment, like.
+   - Moderation tools in admin (delete/ban/feature).
+11. Admin Dashboard
+   - Protected admin area for managing products, orders, players, posts, tournaments, users, and forum moderation.
+12. SEO & Social
+   - Create a reusable Head component setting title, meta description, canonical, og:image, twitter card.
+   - Provide sitemap.xml and robots.txt endpoints.
+   - Include structured data (JSON-LD) for Organization and Breadcrumbs.
+13. Images & Media
+   - Configure Cloudinary for production (or local /public for demo).
+   - Generate optimized <picture> markup for hero/og images.
+14. Performance & Accessibility
+   - Use Next/Image for optimization, lazy loading for videos.
+   - Basic Lighthouse-friendly best practices.
+15. Testing & Scripts
+   - Include scripts: dev, build, start, migrate, seed.
+   - Provide basic unit tests for critical components (Jest or testing-library).
+16. Data Seeding
+   - Provide a seed script to create initial content: 5 players, 5 products, 5 posts, 3 tournaments, 2 demo users (one admin).
+17. README & Deployment
+   - Detailed README with environment variables and Replit deployment steps.
+   - List required ENV: DATABASE_URL, NEXTAUTH_SECRET, STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, CLOUDINARY_URL, NEXT_PUBLIC_SITE_URL.
+   - Include instructions for running Stripe webhooks locally (e.g., stripe CLI or Replit-forwarder).
+18. Security & Best Practices
+   - Hide secrets via environment variables.
+   - Validate inputs on server side.
+   - Rate limit critical API endpoints (login, post creation).
+19. Developer Handoff
+   - Output a final summary page or /dev-info route listing endpoints, sample credentials, and admin URL.
+
+DELIVERABLES (what to generate):
+- Full Next.js project (TypeScript) with the features above.
+- Clear README with 1-click Replit run instructions.
+- Seed script and demo content.
+- Admin credentials (in README or .env.example) for demo: admin@example.com / Password123!
+- Sample webhook route for Stripe and notes on setting up webhook endpoint.
+- Sitemap at /sitemap.xml and robots.txt at /robots.txt.
+
+UI/UX GUIDELINES:
+- Use neutral cricket-themed palette (green / dark blue / white).
+- Clean, modern sports layout with hero, cards, two-column content for blog and shop.
+- Homepage should include hero, latest news ticker, featured video, upcoming fixtures, featured products, and membership CTA.
+
+ADDITIONAL NOTES:
+- For forum scaling later, comment code where to replace with Discourse or a managed forum.
+- Keep code modular: components, hooks, services, pages, db (Prisma).
+- Use Prisma ORM + SQLite for demo (can switch to Postgres easily).
+- Use stripe test keys by default; document switching to live keys.
+
+PLEASE: build this as a working demo that runs in Replit with minimal setup. If any third-party account is required (Cloudinary, Stripe), make dev instructions optional and provide fallback local behavior (store images in /public, simulate payments in test mode).
+
+End of prompt.
